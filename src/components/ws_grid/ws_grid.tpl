@@ -22,7 +22,6 @@
                     &nbsp; &nbsp;
                     <input v-model="filter_length" style="width: 200px" type="text" placeholder="Length (<>)">
 
-
                     <button id="clear_filters" style="width: 100px" v-on:click="clear_filters();">Clear filters</button>
                 </div>
             </div>

@@ -5,80 +5,58 @@ export default {
 	components: {
 		VueJsonPretty
 	},
-
-	data()
-	{
+	data() {
 		return {
 			edit_mode: false,
 			temp_data: String,
 			is_json: false
 		};
 	},
-	props:
-		{
-			item_data: {
-				type: String,
-				default: {}
-			},
-
+	props: {
+		item_data: {
+			type: String,
+			default: {}
 		},
+	},
 	computed: {
-		item_virtual_data()
-		{
+		item_virtual_data() {
 			return JSON.parse(this.item_data);
 		},
-
 	},
 	watch: {
-		item_data()
-		{
-			try
-			{
+		item_data() {
+			try {
 				let t = JSON.parse(this.item_data);
 				this.temp_data = JSON.stringify(t, null, 4);
 				this.is_json = true;
-
-			} catch (e)
-			{
-
+			} catch (e) {
 				this.temp_data = this.item_data;
 				this.is_json = false;
 			}
 		}
-
 	},
-	created()
-	{
+	created() {
 		console.log('created');
 
-		try
-		{
+		try {
 			let t = JSON.parse(this.item_data);
 			this.temp_data = JSON.stringify(t, null, 4);
 			this.is_json = true;
-
-		} catch (e)
-		{
+		} catch (e) {
 			console.log('error')
 			this.temp_data = this.item_data;
 			this.is_json = false;
 		}
 	},
-
 	methods: {
-		edit()
-		{
+		edit() {
 			this.edit_mode = true;
 		},
-		send()
-		{
+		send() {
 			this.$emit('ws_send', this.temp_data);
 		},
-		hide()
-		{
+		hide() {
 			this.$emit('hide_detail');
 		}
 	},
-
-
 };
