@@ -59,6 +59,9 @@ export default {
     clear_all(data) {
       this.$emit('remove_all');
     },
+    import_ws(data) {
+      this.$emit('import_ws');
+    },
     export_all(data) {
       this.$emit('export_all');
     },

@@ -5,6 +5,9 @@
         <div class="cell clear_all">
           <button v-on:click="clear_all();">Clear All</button>
         </div>
+        <div class="cell import">
+          <button v-on:click="import_ws();">Import</button>
+        </div>
         <div class="cell export_all">
           <button v-on:click="export_all();">Export</button>
         </div>
