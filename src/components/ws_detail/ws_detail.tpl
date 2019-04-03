@@ -6,7 +6,7 @@
         </div>
         <div  v-if = "is_json == true" class = "detail_center">
             <vue-json-pretty
-                    :deep=4
+                    :deep=14
                     :data="item_virtual_data">
             </vue-json-pretty>
         </div>
@@ -30,7 +30,5 @@
         <div class="detail_footer">
             <button v-on:click="send()">Send (new session)</button>
         </div>
-
     </div>
-
 </div>
