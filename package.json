@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "devel": "vue-cli-service build --mode development",
     "lint": "vue-cli-service lint",
-    "start:firefox": "web-ext run --source-dir ./dist/ --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
+    "start:firefox": "web-ext run  --keep-profile-changes --firefox-profile=dev --url https://v.ops.ringcentral.com/join/696384857 --source-dir ./dist/ --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe \""
   },
   "dependencies": {
     "json-formatter-js": "^2.2.1",
