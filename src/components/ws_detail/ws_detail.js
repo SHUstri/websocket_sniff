@@ -27,7 +27,7 @@ export default {
     item_data() {
       try {
         let t = JSON.parse(this.item_data);
-        this.temp_data = JSON.stringify(t, null, 4);
+        this.temp_data = JSON.stringify(t, null, 2);
         this.is_json = true;
       } catch (e) {
         this.temp_data = this.item_data;
@@ -40,7 +40,7 @@ export default {
 
     try {
       let t = JSON.parse(this.item_data);
-      this.temp_data = JSON.stringify(t, null, 4);
+      this.temp_data = JSON.stringify(t, null, 2);
       this.is_json = true;
     } catch (e) {
       console.log('error')

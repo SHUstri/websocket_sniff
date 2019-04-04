@@ -42,7 +42,6 @@
 				});
 			},
       import_ws() {
-			  //alert('import works');
         let import_dialog = document.createElement('input');
         import_dialog.type = 'file';
         let ws_data = this.ws_data;
@@ -52,7 +51,7 @@
           reader.readAsText(file,'UTF-8');
           reader.onload = readerEvent => {
             let content = readerEvent.target.result; // this is the content!
-            content.split('\n').forEach(function(csv_string,index){
+            content.split('\n').forEach(function(csv_string){
               if ( csv_string.startsWith('sep=') ) {
                 return;
               }
@@ -93,20 +92,18 @@
                     break;
                 }
               });
-              if ( index > 51 ) {
-                // alert(JSON.stringify(tmp_data));
-              }
               ws_data.push(tmp_data);
             });
           }
         }
+
         document.body.appendChild(import_dialog);
         import_dialog.click();
         document.body.removeChild(import_dialog);
       },
       export_all() {
         // Building the CSV from the Data two-dimensional array
-        // Each column is separated by ";" and new line "\n" for next row
+        // Each column is separated by "|" and new line "\n" for next row
         let csvContent = 'sep=|\n';
         csvContent += 'type|data|length|time|formatted_data|formatted_time|class\n';
         let dataString = '';
